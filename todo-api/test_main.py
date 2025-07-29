@@ -9,6 +9,7 @@ def test_read_root():
     message = response.json()["message"]
     # assert message.startswith("Hello from CI/CD Pipeline!")
     assert "PRODUCTION CI/CD PIPELINE" in message
+    # assert "LIVE INTERVIEW DEMO" in message
     assert "Hits:" in message
 
 def test_metrics_endpoint():

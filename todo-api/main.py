@@ -13,6 +13,8 @@ def read_root():
     # return {"message": f"Hello from CI/CD Pipeline! 🚀 Hits: {hits._value.get()}"} #changed API response from default. 
     # return {"message": f"🚀 FINAL TEST - CI/CD COMPLETE! Hits: {hits._value.get()}"}
     return {"message": f"🚀 PRODUCTION CI/CD PIPELINE! Hits: {hits._value.get()}"}
+    #     return {"message": f"🎯 LIVE INTERVIEW DEMO! Hits: {hits._value.get()}"}
+
 
 @app.get("/metrics")
 def metrics():
