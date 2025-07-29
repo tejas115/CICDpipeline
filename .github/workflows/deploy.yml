@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test # Optional: specify branches to trigger on - test branch for testing purposes
 
 jobs:
   build-and-deploy:
