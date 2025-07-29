@@ -1,3 +1,6 @@
+# Medium post
+https://medium.com/@spiegelhaltercurt/end-to-end-ci-cd-with-argocd-github-actions-and-fastapi-on-kubernetes-8fdcab6c12df
+
 # Production CI/CD Pipeline Demo
 
 A complete GitOps CI/CD pipeline demonstrating modern DevOps practices with automated testing, deployment, and monitoring.
