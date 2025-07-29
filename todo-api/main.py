@@ -10,7 +10,7 @@ hits = Counter("hits", "Number of hits to the root")
 def read_root():
     hits.inc()
     # return {"message": "Hello World"}
-    return {"message": f"Hello from CI/CD Pipeline! 🚀 Hits: {hits._value.get()}"}
+    return {"message": f"Hello from CI/CD Pipeline! 🚀 Hits: {hits._value.get()}"} #changed API response from default. 
 
 
 @app.get("/metrics")
