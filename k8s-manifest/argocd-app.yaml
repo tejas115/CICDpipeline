@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/CSpiegelhalter/CICDpipeline
+    repoURL: https://github.com/tejas115/CICDpipeline
     targetRevision: HEAD
     path: k8s-manifest
   destination:
