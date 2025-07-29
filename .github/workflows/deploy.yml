@@ -54,7 +54,14 @@ jobs:
 
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tejas115/CICDpipeline.git
 
-        cd CICDpipeline/k8s-manifest
+        cd CICDpipeline
+
+        # Checkout the same branch we're running on
+        git checkout ${{ github.ref_name }}
+        echo "Checked out branch: ${{ github.ref_name }}"
+
+        cd k8s-manifest
+
 
         sed -i "s|image: .*|image: ${{ env.image_name }}:${{ env.TAG }}|" deployment.yaml
 
@@ -63,7 +70,7 @@ jobs:
           echo "No changes to commit"
         else
           git commit -m "Update image to ${{ env.TAG }} [skip ci]"
-          git push
+          git push origin ${{ github.ref_name }}
         fi
 
 

@@ -7,7 +7,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tejas115/CICDpipeline
-    targetRevision: HEAD
+    # targetRevision: HEAD
+    targetRevision: test
     path: k8s-manifest
   destination:
     server: https://kubernetes.default.svc
