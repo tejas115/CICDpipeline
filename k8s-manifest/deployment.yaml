@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: todo-api
-          image: ghcr.io/tejas115/todo-api:f85049fdb3bb5e52ac39139f0bf4752c08c02516
+          image: ghcr.io/tejas115/todo-api:041bdf88e650318995462406273f3662c23877b3
           ports:
             - containerPort: 80
