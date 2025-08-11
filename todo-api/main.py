@@ -1,10 +1,23 @@
 # main.py
-from fastapi import FastAPI
-from prometheus_client import Counter, generate_latest
+from fastapi import FastAPI, Request
+from prometheus_client import Counter, Histogram, generate_latest
 from starlette.responses import Response
+import time
 
 app = FastAPI()
 hits = Counter("hits", "Number of hits to the root")
+request_duration = Histogram("http_request_duration_seconds", "HTTP request duration in seconds", ["method", "endpoint"])
+
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+    
+    # Record metrics
+    request_duration.labels(method=request.method, endpoint=request.url.path).observe(process_time)
+    
+    return response
 
 @app.get("/")
 def read_root():
